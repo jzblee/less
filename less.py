@@ -43,11 +43,11 @@ logo_mappings = {
     'Yale': '{o.yale.logo}'
 }
 
-stats_col_mappings = {
+stats_col_mappings = {      # these are the columns we want to display
     'rank': 0,              # conference rank (by pts)
-    'school': 1,              # school name
+    'school': 1,            # school name
     'conf_record': 3,       # conference record (W-L-T)
-    'pts': 5,          # conference points
+    'pts': 5,               # conference points
     'overall_record': 10    # overall record (W-L-T)
 }
 
@@ -62,7 +62,6 @@ if row == None:
     print ("Conference " + conf_mappings[conf_selector] + " not found")
     raise SystemExit
 row = row.parent.parent.next_sibling # go to the row after the one containing the conference name
-col = row.td
 while row != None and row['class'][0] == 'stats-section' or row['class'][0] == 'stats-header':
     row = row.next_sibling.next_sibling # every other sibling is a newline
 while row != None and row['class'][0] != 'stats-section':
@@ -72,8 +71,8 @@ while row != None and row['class'][0] != 'stats-section':
         new_cell = col.text.strip()
         data[col_ind].append(new_cell)
         col_ind += 1
-        col = col.next_sibling.next_sibling # every other sibling is a newline
-    row = row.next_sibling.next_sibling # every other sibling is a newline
+        col = col.next_sibling.next_sibling
+    row = row.next_sibling.next_sibling
 
 print('===!RANK!===')
 print('\\n') # RPITS will ignore leading newlines unless a newline character is used 
