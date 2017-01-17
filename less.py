@@ -75,7 +75,7 @@ while row != None and row['class'][0] != 'stats-section':
     row = row.next_sibling.next_sibling
 
 print('===!RANK!===')
-print('\\n', end="")
+print('\\ ', end="")
 # RPITS ignores leading newlines unless a newline character is used
 # There can only be one leading newline in the output, for formatting reasons
 for data_row in data[stats_col_mappings['rank']]:
