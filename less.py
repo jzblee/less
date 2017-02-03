@@ -17,7 +17,7 @@ conf_mappings = {
 while len(conf_mappings.get(conf_selector, '')) == 0:
     conf_selector = input('Enter a conference (ah|b1g|ecac|he|nchc|wcha|ind): ')
 
-stats_table = SoupStrainer('table', { 'class': 'hiliteRow' })
+stats_table = SoupStrainer('table', { 'class': 'data' })
 url = 'http://www.collegehockeynews.com/reports/standings.php'
 
 print('Selected conference: ' + conf_mappings[conf_selector])
